@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Header from "./Header";
 
 const Login = () => {
@@ -21,7 +21,7 @@ const Login = () => {
         <h1 className="font-bold text-3xl py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
-        {!isSignInForm ? (
+        {/* {!isSignInForm ? (
           <input
             type="text"
             placeholder="First Name"
@@ -29,13 +29,20 @@ const Login = () => {
           />
         ) : (
           ""
-        )}
+        )} */}
         {!isSignInForm ? (
-          <input
-            type="text"
-            placeholder="Last Name"
-            className="p-4 my-4 w-full bg-gray-800 rounded-md"
-          />
+          <>
+            <input
+              type="text"
+              placeholder="First Name"
+              className="p-4 my-4 w-full bg-gray-800 rounded-md"
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              className="p-4 my-4 w-full bg-gray-800 rounded-md"
+            />
+          </>
         ) : (
           ""
         )}
@@ -55,11 +62,11 @@ const Login = () => {
         <p onClick={toggleSignInForm} className="cursor-pointer">
           {isSignInForm ? (
             <p>
-              <span className="text-gray-600">New to Netflix?</span> Sign up now
+              <span className="text-gray-600">New to Netflix?</span> Sign up
             </p>
           ) : (
             <p>
-              <span className="text-gray-600">Already a user?</span> Sign in now
+              <span className="text-gray-600">Already a user?</span> Sign in
             </p>
           )}
         </p>
